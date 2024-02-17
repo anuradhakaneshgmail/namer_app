@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     label: Text('Home'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.favorite),
+                    icon: Icon(key:Key('fav_icon'),Icons.favorite),
                     label: Text('Favorites'),
                   ),
                 ],
@@ -169,6 +169,7 @@ class BigCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Text(
+          key:Key("card_text"),
           pair.asLowerCase,
           style: style,
           semanticsLabel: "${pair.first} ${pair.second}",
@@ -199,7 +200,7 @@ class FavoritesPage extends StatelessWidget {
         for (var pair in appState.favorites)
           ListTile(
             leading: Icon(Icons.favorite),
-            title: Text(pair.asLowerCase),
+            title: Text(key:Key('fav_list'), pair.asLowerCase),
           ),
       ],
     );
